@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19/03/2017 10:22:31 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="arqSw.Hibernate.Artista" table="artista" catalog="mydb">
+        <id name="idArtista" type="java.lang.Integer">
+            <column name="idArtista" />
+            <generator class="identity" />
+        </id>
+        <property name="usuario" type="string">
+            <column name="usuario" length="45" />
+        </property>
+        <property name="clave" type="string">
+            <column name="clave" length="45" />
+        </property>
+        <set name="estampas" table="estampa" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="Artista_idArtista" not-null="true" />
+            </key>
+            <one-to-many class="arqSw.Hibernate.Estampa" />
+        </set>
+    </class>
+</hibernate-mapping>

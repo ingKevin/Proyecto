@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19/03/2017 10:22:31 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="arqSw.Hibernate.Estampa" table="estampa" catalog="mydb">
+        <id name="idEstampa" type="int">
+            <column name="idEstampa" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tema" class="arqSw.Hibernate.Tema" fetch="select">
+            <column name="Tema_idTema" not-null="true" />
+        </many-to-one>
+        <many-to-one name="artista" class="arqSw.Hibernate.Artista" fetch="select">
+            <column name="Artista_idArtista" not-null="true" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="45" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="45" />
+        </property>
+        <property name="imagenes" type="string">
+            <column name="imagenes" length="45" />
+        </property>
+        <property name="tema_1" type="string">
+            <column name="tema" length="45" />
+        </property>
+        <property name="rating" type="string">
+            <column name="rating" length="45" />
+        </property>
+        <property name="popularidad" type="string">
+            <column name="popularidad" length="45" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 19/03/2017 10:22:31 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="arqSw.Hibernate.Venta" table="venta" catalog="mydb">
+        <id name="idVenta" type="java.lang.Integer">
+            <column name="idVenta" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cliente" class="arqSw.Hibernate.Cliente" fetch="select">
+            <column name="Cliente_idCliente" not-null="true" />
+        </many-to-one>
+        <property name="fecha" type="string">
+            <column name="fecha" length="45" />
+        </property>
+        <property name="camisetaIdCamiseta" type="int">
+            <column name="Camiseta_idCamiseta" not-null="true" />
+        </property>
+        <one-to-one name="camiseta" class="arqSw.Hibernate.Camiseta"></one-to-one>
+    </class>
+</hibernate-mapping>
